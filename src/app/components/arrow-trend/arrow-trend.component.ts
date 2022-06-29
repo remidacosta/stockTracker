@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
   template: `
   <div class="arrow">
     <mat-icon *ngIf="+value < 0" class="down">arrow_downward</mat-icon>
-    <mat-icon *ngIf="+value >= 0" class="up">arrow_upward</mat-icon>
+    <mat-icon *ngIf="+value > 0" class="up">arrow_upward</mat-icon>
   </div>`,
   styleUrls: ['./arrow-trend.component.scss']
 })
