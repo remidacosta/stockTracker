@@ -1,0 +1,19 @@
+<div class="sentiments-stock-container">
+  <app-stock [stock]="stock">
+    <div class="sentiments" *ngIf="stock.sentiments">
+      <div class="sentiment-section" *ngFor="let sentiment of stock.sentiments"
+        [style.width.%]="100 / stock.sentiments.length">
+        <div class="informations">
+          <div>{{ sentiment.date | date:'MMMM' | uppercase }}</div>
+          <div>{{ 'Change: ' + (sentiment.change > 0 ? '+' + sentiment.change : sentiment.change) }}</div>
+          <div>{{ 'MSPR: ' + sentiment.mspr }}</div>
+        </div>
+        <div class="arrow">
+          <app-arrow-trend [value]="sentiment.change"></app-arrow-trend>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!stock.sentiments || !stock.sentiments.length">No sentiments exist for this trade stock</div>
+  </app-stock>
+  <button routerLink="/"> < Back to list of stocks</button>
+</div>

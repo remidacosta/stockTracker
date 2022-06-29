@@ -1,0 +1,11 @@
+<div class="dashboard-container">
+  <div class="symbol-form">
+    <app-symbol-form (symbolSelected)="onSymbolSelection($event)"></app-symbol-form>
+  </div>
+  <div class="stock-list">
+    <app-quote-stock-list [list]="stocks" (listModified)="onListModification($event)"></app-quote-stock-list>
+  </div>
+</div>
+
+
+

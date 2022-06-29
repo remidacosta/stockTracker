@@ -1,0 +1,28 @@
+<ng-container *ngFor="let stock of list">
+
+  <app-stock [stock]="stock">
+    <button mat-icon-button class="close" (click)="onDeleteClick(stock)">
+      <mat-icon>close</mat-icon>
+    </button>
+    <div class="quote-section" *ngIf="stock.quote && stock.valid">
+      <div class="left">
+        <div class="top">
+          <div>{{ 'Change today: ' + (stock.quote.change > 0 ? '+' + stock.quote.change : stock.quote.change) + '%' }}</div>
+          <div>{{ 'Opening price: ' + (stock.quote.open | currency) }}</div>
+        </div>
+        <div class="bottom">
+          <div>{{ 'Current price: ' + (stock.quote.current | currency) }}</div>
+          <div>{{ 'High price: ' + (stock.quote.high | currency) }}</div>
+        </div>
+        <button [routerLink]="['sentiment', stock.symbol]">Go to social sentiment details ></button>
+      </div>
+      <div class="right">
+        <app-arrow-trend [value]="stock.quote.change"></app-arrow-trend>
+      </div>
+    </div>
+    <!-- Errors displayed if the stock object is not valid -->
+    <div *ngIf="!stock.valid" class="error">No trade stock is linked to the symbol entered</div>
+    <div *ngIf="!stock.quote" class="error">No quote exists for this trade stock</div>
+  </app-stock>
+
+</ng-container>

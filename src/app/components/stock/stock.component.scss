@@ -1,0 +1,28 @@
+.stock-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mat-card {
+    width: 100%;
+    margin: 1%;
+
+    .header {
+      height: 40px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      .title {
+        font-weight: bold;
+      }
+    }
+
+    &.error {
+      background-color: #ff262661;
+    }
+  }
+}

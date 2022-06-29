@@ -1,0 +1,26 @@
+.quote-section {
+  display: flex;
+
+  .left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    .top, .bottom {
+      display: flex;
+
+      >div {
+        width: 50%;
+        height: 50px;
+      }
+    }
+
+    button {
+      width: fit-content;
+    }
+  }
+}
+
+.error {
+  height: 50px;
+}

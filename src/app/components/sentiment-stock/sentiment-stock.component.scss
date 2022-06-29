@@ -1,0 +1,27 @@
+.sentiments {
+  display: flex;
+
+  .sentiment-section {
+    display: flex;
+
+    .informations {
+      display: flex;
+      flex-direction: column;
+
+      >div {
+        height: 50px;
+      }
+    }
+
+    .arrow {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+button {
+  margin-left: 1%;
+}

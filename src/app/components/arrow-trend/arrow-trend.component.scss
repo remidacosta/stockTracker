@@ -1,0 +1,17 @@
+.arrow {
+  display: flex;
+
+  mat-icon {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+
+    &.up {
+      color: green;
+    }
+
+    &.down {
+      color: red;
+    }
+  }
+}

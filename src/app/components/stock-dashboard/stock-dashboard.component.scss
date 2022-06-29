@@ -1,0 +1,16 @@
+.dashboard-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .symbol-form {
+    height: fit-content;
+  }
+
+  .stock-list {
+    height: inherit;
+    overflow: auto;
+  }
+}
+
